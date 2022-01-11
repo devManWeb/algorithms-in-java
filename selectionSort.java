@@ -51,7 +51,7 @@ public class selectionSort{
 
     public static void main(String[] args){
         
-        int[] values = {9,14,3,2,43,11,58,22};  
+        int[] values = {9,-514,3,2,343,681,0,58,2};  
         System.out.println("Before Selection Sort");  
 
         for(int i=0; i < values.length; i++){  
