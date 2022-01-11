@@ -56,26 +56,26 @@ public class mergeSort{
      * @param number of elements off subArrayB
      * @return sorted array of ints
      */
-    public static int[] merge(int[] baseArray, int[] subArrayA, int[] subArrayB, int aSize, int bSize){
-        int counter1 = 0;
-        int counter2 = 0;
-        int counter3 = 0;
-        while (counter1 < aSize && counter2 < bSize) {
-            if (subArrayA[counter1] <= subArrayB[counter2]) {
-                baseArray[counter3++] = subArrayA[counter1++];
+    public static int[] merge(int[] finalArray, int[] subArrayA, int[] subArrayB, int aSize, int bSize){
+        int counterFinal = 0;
+        int counterA = 0;
+        int counterB = 0;
+        while (counterA < aSize && counterB < bSize) {
+            if (subArrayA[counterA] <= subArrayB[counterB]) {
+                finalArray[counterFinal++] = subArrayA[counterA++];
             }
             else {
-                baseArray[counter3++] = subArrayB[counter2++];
+                finalArray[counterFinal++] = subArrayB[counterB++];
             }
         }
-        //executed only one of the two, empties the temporary array 
-        while (counter1 < aSize) {
-            baseArray[counter3++] = subArrayA[counter1++];
+        //empties the temporary array 
+        while (counterA < aSize) {
+            finalArray[counterFinal++] = subArrayA[counterA++];
         }
-        while (counter2 < bSize) {
-            baseArray[counter3++] = subArrayB[counter2++];
+        while (counterB < bSize) {
+            finalArray[counterFinal++] = subArrayB[counterB++];
         }
-        return baseArray;
+        return finalArray;
     }
 
     /**
@@ -86,26 +86,26 @@ public class mergeSort{
      * @param bSize number of elements off subArrayB
      * @return sorted array of strings
      */
-    public static String[] merge(String[] baseArray, String[] subArrayA, String[] subArrayB, int aSize, int bSize){
-        int counter1 = 0;
-        int counter2 = 0;
-        int counter3 = 0;
-        while (counter1 < aSize && counter2 < bSize) {
-            if (subArrayA[counter1].compareTo(subArrayB[counter2]) <= 0) {
-                baseArray[counter3++] = subArrayA[counter1++];
+    public static String[] merge(String[] finalArray, String[] subArrayA, String[] subArrayB, int aSize, int bSize){
+        int counterFinal = 0;
+        int counterA = 0;
+        int counterB = 0;
+        while (counterA < aSize && counterB < bSize) {
+            if (subArrayA[counterA].compareTo(subArrayB[counterB]) <= 0) {
+                finalArray[counterFinal++] = subArrayA[counterA++];
             }
             else {
-                baseArray[counter3++] = subArrayB[counter2++];
+                finalArray[counterFinal++] = subArrayB[counterB++];
             }
         }
-        //executed only one of the two, empties the temporary array 
-        while (counter1 < aSize) {
-            baseArray[counter3++] = subArrayA[counter1++];
+        //empties the temporary array 
+        while (counterA < aSize) {
+            finalArray[counterFinal++] = subArrayA[counterA++];
         }
-        while (counter2 < bSize) {
-            baseArray[counter3++] = subArrayB[counter2++];
+        while (counterB < bSize) {
+            finalArray[counterFinal++] = subArrayB[counterB++];
         }
-        return baseArray;
+        return finalArray;
     }
 
     public static void main(String[] args){
