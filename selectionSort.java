@@ -5,7 +5,7 @@ public class selectionSort{
      * @param start of the unsorted part
      * @return sorted array of ints
      */
-    public static int[] sortInts(int[] array, int start){
+    public static int[] sort(int[] array, int start){
         if(array.length == 1 || start == array.length-1){
             return array;
         }
@@ -21,7 +21,7 @@ public class selectionSort{
         array[start] = array[minIndex];
         array[minIndex] = temp;
         start++;
-        return sortInts(array,start);
+        return sort(array,start);
     }
 
     /**
@@ -29,7 +29,7 @@ public class selectionSort{
      * @param start of the unsorted part
      * @return sorted array of strings
      */
-    public static String[] sortStrings(String array[], int start){
+    public static String[] sort(String array[], int start){
         
         if(array.length == 1 || start == array.length-1){
             return array;
@@ -46,7 +46,7 @@ public class selectionSort{
         array[start] = array[minIndex];
         array[minIndex] = temp;
         start++;
-        return sortStrings(array,start);
+        return sort(array,start);
     }
 
     public static void main(String[] args){
@@ -58,7 +58,7 @@ public class selectionSort{
             System.out.print(values[i]+" ");  
         }  
         System.out.println();  
-        values = sortInts(values,0);
+        values = sort(values,0);
         System.out.println("After Selection Sort");  
         for(int i=0; i < values.length; i++){  
             System.out.print(values[i]+" ");  
@@ -72,7 +72,7 @@ public class selectionSort{
             System.out.print(letters[i]+" ");  
         }  
         System.out.println();  
-        letters = sortStrings(letters,0);
+        letters = sort(letters,0);
         System.out.println("After Selection Sort");  
         for(int i=0; i < letters.length; i++){  
             System.out.print(letters[i]+" ");  
