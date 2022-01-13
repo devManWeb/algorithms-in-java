@@ -1,7 +1,7 @@
 public class mergeSort{
 
     /**
-     * @param unsorted array of ints
+     * @param array - unsorted array of ints
      * @return sorted array of ints
      */
     public static int[] sort(int[] array){
@@ -21,11 +21,11 @@ public class mergeSort{
         }
         sort(subArrayA);
         sort(subArrayB);
-        return merge(array, subArrayA, subArrayB, middle, array.length - middle);
+        return merge(array, subArrayA, subArrayB);
     }
 
     /**
-     * @param unsorted array of strings
+     * @param array - unsorted array of strings
      * @return sorted array of strings
      */
     public static String[] sort(String[] array){
@@ -45,22 +45,20 @@ public class mergeSort{
         }
         sort(subArrayA);
         sort(subArrayB);
-        return merge(array, subArrayA, subArrayB, middle, array.length - middle);
+        return merge(array, subArrayA, subArrayB);
     }
 
     /**
-     * @param baseArray final array of ints to return sorted
-     * @param subArrayA unsorted array of ints to join with the other
-     * @param subArrayB unsorted array of ints to join with the other
-     * @param number of elements off subArrayA 
-     * @param number of elements off subArrayB
+     * @param baseArray - final array of ints to return sorted
+     * @param subArrayA - unsorted array of ints to join with the other
+     * @param subArrayB - unsorted array of ints to join with the other
      * @return sorted array of ints
      */
-    public static int[] merge(int[] finalArray, int[] subArrayA, int[] subArrayB, int aSize, int bSize){
+    public static int[] merge(int[] finalArray, int[] subArrayA, int[] subArrayB){
         int counterFinal = 0;
         int counterA = 0;
         int counterB = 0;
-        while (counterA < aSize && counterB < bSize) {
+        while (counterA < subArrayA.length && counterB < subArrayB.length) {
             if (subArrayA[counterA] <= subArrayB[counterB]) {
                 finalArray[counterFinal++] = subArrayA[counterA++];
             }
@@ -69,28 +67,26 @@ public class mergeSort{
             }
         }
         //empties the temporary array 
-        while (counterA < aSize) {
+        while (counterA < subArrayA.length) {
             finalArray[counterFinal++] = subArrayA[counterA++];
         }
-        while (counterB < bSize) {
+        while (counterB < subArrayB.length) {
             finalArray[counterFinal++] = subArrayB[counterB++];
         }
         return finalArray;
     }
 
     /**
-     * @param baseArray final array of strings to return sorted
-     * @param subArrayA unsorted array of strings to join with the other
-     * @param subArrayB unsorted array of strings to join with the other
-     * @param aSize number of elements off subArrayA 
-     * @param bSize number of elements off subArrayB
+     * @param baseArray - final array of strings to return sorted
+     * @param subArrayA - unsorted array of strings to join with the other
+     * @param subArrayB - unsorted array of strings to join with the other
      * @return sorted array of strings
      */
-    public static String[] merge(String[] finalArray, String[] subArrayA, String[] subArrayB, int aSize, int bSize){
+    public static String[] merge(String[] finalArray, String[] subArrayA, String[] subArrayB){
         int counterFinal = 0;
         int counterA = 0;
         int counterB = 0;
-        while (counterA < aSize && counterB < bSize) {
+        while (counterA < subArrayA.length && counterB < subArrayB.length) {
             if (subArrayA[counterA].compareTo(subArrayB[counterB]) <= 0) {
                 finalArray[counterFinal++] = subArrayA[counterA++];
             }
@@ -99,10 +95,10 @@ public class mergeSort{
             }
         }
         //empties the temporary array 
-        while (counterA < aSize) {
+        while (counterA < subArrayA.length) {
             finalArray[counterFinal++] = subArrayA[counterA++];
         }
-        while (counterB < bSize) {
+        while (counterB < subArrayB.length) {
             finalArray[counterFinal++] = subArrayB[counterB++];
         }
         return finalArray;
