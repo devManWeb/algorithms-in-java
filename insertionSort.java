@@ -1,55 +1,42 @@
 public class insertionSort{
 
     /**
-     * @param array of ints to sort with insertion sort
-     * @param start of the unsorted part
+     * Iterative version of insertion sort, for array of ints.
+     * @param array - array of ints to sort with insertion sort
      * @return sorted array of ints
      */
-    public static int[] sort(int[] array, int start){
-        
-        if(start == array.length || array.length == 1){
-            return array;
-        }
-
-        int tempValue = 0;
-        int counter = start;
-
-        while(counter > 0){
-            if(array[counter-1] > array[counter]){
-                tempValue = array[counter-1];
-                array[counter - 1] = array[counter];
-                array[counter] = tempValue;
+    public static int[] sort(int[] array){
+        for(int i = 1; i < array.length; i++){
+            //we start from 1
+            int currElement = array[i];
+            int counter = 0;
+            for(counter = i; counter > 0 && currElement < array[counter - 1]; counter--){
+                //swap if counter - 1 is greater than counter
+                array[counter] = array[counter -1];
+                array[counter -1] = currElement;
             }
-            counter--;
         }
-        start++;
-        return sort(array,start);
+        return array;        
     }
 
     /**
-     * @param array of strings to sort with insertion sort
-     * @param start of the unsorted part
+     * Iterative version of insertion sort, for array of strings.
+     * @param array - array of strings to sort with insertion sort
+     * @param elementsNum - number of elements of the array
      * @return sorted array of strings
      */
-    public static String[] sort(String array[], int start){
-        
-        if(start == array.length || array.length == 1){
-            return array;
-        }
-
-        String tempString = "";
-        int counter = start;
-
-        while(counter > 0){
-            if(array[counter-1].compareTo(array[counter]) > 0){
-                tempString = array[counter-1];
-                array[counter - 1] = array[counter];
-                array[counter] = tempString;
+    public static String[] sort(String array[]){
+        for(int i = 1; i<array.length; i++){
+            //we start from 1
+            String currElement = array[i];
+            int counter = 0;
+            for(counter = i; counter > 0 && currElement.compareTo(array[counter - 1]) < 0; counter--){
+                //swap if counter - 1 is greater than counter
+                array[counter] = array[counter - 1];
+                array[counter - 1] = currElement;
             }
-            counter--;
         }
-        start++;
-        return sort(array,start);
+        return array;
     }
 
     public static void main(String[] args){
@@ -61,7 +48,7 @@ public class insertionSort{
             System.out.print(values[i]+" ");  
         }  
         System.out.println();  
-        values = sort(values,0);
+        values = sort(values);
         System.out.println("After Insertion Sort");  
         for(int i=0; i < values.length; i++){  
             System.out.print(values[i]+" ");  
@@ -75,7 +62,7 @@ public class insertionSort{
             System.out.print(letters[i]+" ");  
         }  
         System.out.println();  
-        letters = sort(letters,0);
+        letters = sort(letters);
         System.out.println("After Insertion Sort");  
         for(int i=0; i < letters.length; i++){  
             System.out.print(letters[i]+" ");  
