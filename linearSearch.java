@@ -4,8 +4,13 @@ public class linearSearch{
      * @param arr of ints to search on
      * @param searchTerm searched int
      * @return if found, index, otherwise -1
+     * @throws IllegalArgumentException when the arguments are not corrected
      */
     public static int search(int[] arr, int searchTerm){
+        if(arr == null){
+            throw new IllegalArgumentException();
+        }
+
         int counter = 0;
         while(counter < arr.length){
             if(arr[counter] == searchTerm){
@@ -20,8 +25,13 @@ public class linearSearch{
      * @param arr of strings to search on
      * @param searchTerm searched int
      * @return if found, index, otherwise -1
+     * @throws IllegalArgumentException when the arguments are not corrected
      */
     public static int search(String[] arr, String searchTerm){
+        if(arr == null || searchTerm == null){
+            throw new IllegalArgumentException();
+        }
+
         int counter = 0;
         while(counter < arr.length){
             if(arr[counter].equals(searchTerm)){

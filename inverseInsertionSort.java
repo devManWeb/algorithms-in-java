@@ -7,8 +7,13 @@ public class inverseInsertionSort{
      * @param array of ints to sort with insertion sort
      * @param start of the unsorted part
      * @return sorted array of ints
+     * @throws IllegalArgumentException when the arguments are not corrected
      */
     public static int[] sort(int[] array, int start){
+
+        if(array == null || start < 0 || start > array.length){
+            throw new IllegalArgumentException();
+        }
         
         if(start == array.length || array.length == 1){
             return array;
@@ -33,8 +38,13 @@ public class inverseInsertionSort{
      * @param array of strings to sort with insertion sort
      * @param start of the unsorted part
      * @return sorted array of strings
+     * @throws IllegalArgumentException when the arguments are not corrected
      */
     public static String[] sort(String array[], int start){
+
+        if(array == null || start < 0 || start > array.length){
+            throw new IllegalArgumentException();
+        }
         
         if(start == array.length || array.length == 1){
             return array;
@@ -84,5 +94,6 @@ public class inverseInsertionSort{
             System.out.print(letters[i]+" ");  
         }  
 
+        System.out.println();
     }
 }

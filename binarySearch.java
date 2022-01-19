@@ -6,6 +6,7 @@ public class binarySearch{
      * @param start of the array
      * @param end of the array
      * @return if found, index, otherwise -1
+     * @throws IllegalArgumentException when the arguments are not corrected
      */
     public static int search(int[] arr, int searchTerm, int start, int end){
         if(arr == null){
@@ -32,6 +33,7 @@ public class binarySearch{
      * @param start of the array
      * @param end of the array
      * @return if found, index, otherwise -1
+     * @throws IllegalArgumentException when the arguments are not corrected
      */
     public static int search(String[] arr, String searchTerm, int start, int end){
         if(arr == null || searchTerm == null){

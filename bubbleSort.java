@@ -4,6 +4,7 @@ public class bubbleSort{
      * Iterative version of bubble sort, for array of ints.
      * @param array - array of ints to sort with bubble sort
      * @return sorted array of ints
+     * @throws IllegalArgumentException when the arguments are not corrected
      */
     public static int[] sort(int[] array){
         if(array == null){
@@ -28,6 +29,7 @@ public class bubbleSort{
      * @param array - array of strings to sort with bubble sort
      * @param elementsNum - number of elements of the array
      * @return sorted array of strings
+     * @throws IllegalArgumentException when the arguments are not corrected
      */
     public static String[] sort(String array[]){
         if(array == null){

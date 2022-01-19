@@ -4,8 +4,12 @@ public class insertionSort{
      * Iterative version of insertion sort, for array of ints.
      * @param array - array of ints to sort with insertion sort
      * @return sorted array of ints
+     * @throws IllegalArgumentException when the arguments are not corrected
      */
     public static int[] sort(int[] array){
+        if(array == null){
+            throw new IllegalArgumentException();
+        }
         for(int i = 1; i < array.length; i++){
             //we start from 1
             int currElement = array[i];
@@ -24,8 +28,12 @@ public class insertionSort{
      * @param array - array of strings to sort with insertion sort
      * @param elementsNum - number of elements of the array
      * @return sorted array of strings
+     * @throws IllegalArgumentException when the arguments are not corrected
      */
     public static String[] sort(String array[]){
+        if(array == null){
+            throw new IllegalArgumentException();
+        }
         for(int i = 1; i<array.length; i++){
             //we start from 1
             String currElement = array[i];
@@ -67,6 +75,7 @@ public class insertionSort{
         for(int i=0; i < letters.length; i++){  
             System.out.print(letters[i]+" ");  
         }  
+        System.out.println();
 
     }
 }

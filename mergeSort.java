@@ -3,8 +3,12 @@ public class mergeSort{
     /**
      * @param array - unsorted array of ints
      * @return sorted array of ints
+     * @throws IllegalArgumentException when the arguments are not corrected
      */
     public static int[] sort(int[] array){
+        if(array == null){
+            throw new IllegalArgumentException();
+        }
         if(array.length == 1){
             return array;
         }
@@ -27,8 +31,12 @@ public class mergeSort{
     /**
      * @param array - unsorted array of strings
      * @return sorted array of strings
+     * @throws IllegalArgumentException when the arguments are not corrected
      */
     public static String[] sort(String[] array){
+        if(array == null){
+            throw new IllegalArgumentException();
+        }
         if(array.length == 1){
             return array;
         }
@@ -132,5 +140,6 @@ public class mergeSort{
         for(int i=0; i < letters.length; i++){  
             System.out.print(letters[i]+" ");  
         }  
+        System.out.println();
     }
 }

@@ -4,8 +4,13 @@ public class selectionSort{
      * @param array of ints to sort with selection sort
      * @param start of the unsorted part
      * @return sorted array of ints
+     * @throws IllegalArgumentException when the arguments are not corrected
      */
     public static int[] sort(int[] array, int start){
+        if(array == null || start < 0 || start > array.length-1){
+            throw new IllegalArgumentException();
+        }
+
         if(array.length == 1 || start == array.length-1){
             return array;
         }
@@ -28,9 +33,13 @@ public class selectionSort{
      * @param array of strings to sort with selection sort
      * @param start of the unsorted part
      * @return sorted array of strings
+     * @throws IllegalArgumentException when the arguments are not corrected
      */
     public static String[] sort(String array[], int start){
-        
+        if(array == null || start < 0 || start > array.length-1){
+            throw new IllegalArgumentException();
+        }
+
         if(array.length == 1 || start == array.length-1){
             return array;
         }
@@ -77,6 +86,7 @@ public class selectionSort{
         for(int i=0; i < letters.length; i++){  
             System.out.print(letters[i]+" ");  
         }  
+        System.out.println();
 
     }
 }
