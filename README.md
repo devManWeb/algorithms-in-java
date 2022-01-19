@@ -1,5 +1,5 @@
 # algorithms-in-java
-Collection of search, sort and ADT algorithms, written in Java 
+Collection of search, sort and ADT algorithms, written in Java:
 
 * Dynamic array
 * Linked list
