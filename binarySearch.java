@@ -8,6 +8,9 @@ public class binarySearch{
      * @return if found, index, otherwise -1
      */
     public static int search(int[] arr, int searchTerm, int start, int end){
+        if(arr == null){
+            throw new IllegalArgumentException();
+        }
         int middle = start + (end-start)/2;
         if(start > end){
             return -1;
@@ -31,6 +34,9 @@ public class binarySearch{
      * @return if found, index, otherwise -1
      */
     public static int search(String[] arr, String searchTerm, int start, int end){
+        if(arr == null || searchTerm == null){
+            throw new IllegalArgumentException();
+        }
         int middle = start + (end-start)/2;
         if(start > end){
             return -1;
@@ -48,7 +54,7 @@ public class binarySearch{
 
     public static void main(String[] args){
         
-        int[] values = {-514,0,2,9,58,343,681};  
+        int[] values = {-514,0,2,2,9,58,343,681};  
         System.out.println("Ordered array of ints");  
         for(int i=0; i < values.length; i++){  
             System.out.print(values[i]+" ");  
@@ -58,7 +64,7 @@ public class binarySearch{
         System.out.println("58 is at index " + result);  
 
         System.out.println("\n");  
-        String[] letters = {"bond","car","hello","house","internet","plane"};  
+        String[] letters = {"bond","aaa","aaa","car","hello","house","internet","plane"};  
         System.out.println("Ordered array of strings");   
 
         for(int i=0; i < letters.length; i++){  
