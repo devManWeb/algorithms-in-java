@@ -17,8 +17,8 @@ public class insertionSort{
             for(counter = i; counter > 0 && currElement < array[counter - 1]; counter--){
                 //swap if counter - 1 is greater than counter
                 array[counter] = array[counter -1];
-                array[counter -1] = currElement;
             }
+            array[counter] = currElement;
         }
         return array;        
     }
@@ -41,8 +41,8 @@ public class insertionSort{
             for(counter = i; counter > 0 && currElement.compareTo(array[counter - 1]) < 0; counter--){
                 //swap if counter - 1 is greater than counter
                 array[counter] = array[counter - 1];
-                array[counter - 1] = currElement;
             }
+            array[counter] = currElement;
         }
         return array;
     }
